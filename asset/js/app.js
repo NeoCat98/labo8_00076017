@@ -59,14 +59,20 @@ formulario.addEventListener("submit", (evt) => {
  }); 
 
  const crearElemento = (bitacora, tbody) =>{ 
+    let boton1 = document.createElement("input"); 
+    boton1.setAttribute("type", "button"); 
+    boton1.value = "eliminar";
     let tr = document.createElement("tr"); 
     Object.values(bitacora).forEach(item => { 
+    
      let td = document.createElement("td"); 
      let content = document.createTextNode(item); 
      td.appendChild(content); 
+     
      tr.setAttribute("class", "click"); 
      tr.appendChild(td); 
     }); 
+    tr.appendChild(boton1); 
    tbody.appendChild(tr); 
   } 
 
@@ -155,3 +161,4 @@ input3.oninput = () => {
         input3.style.borderColor = "green";
     } 
 }
+
